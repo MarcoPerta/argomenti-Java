@@ -1,0 +1,54 @@
+/*Gli oggetti non sono limitati a un solo campo di istanza. Possiamo dichiarare tutti i campi necessari per i requisiti del nostro programma.
+Modifichiamo le istanze di Car in modo che abbiano più campi.*/
+public class Car {
+  String color;
+  // new fields!
+  boolean isRunning;
+  int velocity;
+ 
+  // new parameters that correspond to the new fields
+  public Car(String carColor, boolean carRunning, int milesPerHour) {
+    color = carColor;
+    // assign new parameters to the new fields
+    isRunning = carRunning;
+    velocity = milesPerHour;
+  }
+ 
+  public static void main(String[] args) {
+    // new values passed into the method call
+    Car ferrari = new Car("red", true, 27);
+    Car renault = new Car("blue", false, 70);
+ 
+    System.out.println(renault.isRunning);
+    // false
+    System.out.println(ferrari.velocity);
+    // 27
+  }
+}
+
+
+public class Dog {
+  // instance field
+  String breed;
+  // constructor method
+  public Dog(String dogBreed) {
+    /* 
+    value of parameter dogBreed 
+    assigned to instance field breed
+    */
+    breed = dogBreed;
+  }
+  public static void main(String[] args) {
+    /* 
+    create instance: 
+    use 'new' operator and invoke constructor
+    */
+    Dog fido = new Dog("poodle");
+    /* 
+    fields are accessed using: 
+    the instance name, `.` operator, and the field name.
+    */
+    fido.breed;
+    // "poodle"
+  }
+}
